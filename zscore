@@ -1,0 +1,28 @@
+import pandas as pd
+path = path = 'C:\\Users\\hemakpatel\\Documents\\Python_training'
+filename = 'GaussianDist'
+df = pd.read_csv(path+'\\'+filename+'.csv')
+df.rename(columns={'0':'ND_random'},inplace=True)
+expected_value = lambda values: sum(values)/len(values)
+standard_deviation = lambda values,expected_value: np.sqrt(sum([(v - expected_value)**2 for v in values])/len(values))
+
+exp = expected_value(df['ND_random'])
+sd = standard_deviation(df['ND_random'],exp)
+print(f'Expected Value is : {exp},Standard deviation is {sd}')
+
+Expected Value is : -0.001240004261881047,Standard deviation is 0.9745275794348686
+
+df['Z_Score'] = (df['ND_random'] - exp)/sd 
+import matplotlib.pyplot as plt
+plt.hist(df['Z_Score'])
+plt.xlabel('Z_Score')
+plt.title('Z_Score of Normal Distribution')
+plt.show()
+
+import scipy.stats as stats
+z_score = stats.zscore(df['ND_random'])
+import matplotlib.pyplot as plt
+plt.hist(z_score)
+plt.xlabel('Z_Score')
+plt.title('Z_Score of Normal Distribution')
+plt.show()
