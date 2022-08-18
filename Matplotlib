@@ -14,7 +14,7 @@ plt.ylabel("Median Salary")
 plt.legend()
 
 
-plt.bar(age_new,dev_new,label = "All Dev",)
+plt.bar(age_new,dev_new,label = "All Dev")
 plt.bar(age_new,java_new,label = "All Java")
 plt.xlabel("Ages")
 plt.ylabel("Median Salary")
