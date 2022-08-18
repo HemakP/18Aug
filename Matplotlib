@@ -39,3 +39,15 @@ plt.xlabel("Ages")
 plt.ylabel("Median Salary (USD)")
 plt.legend()
 plt.show()
+
+
+import numpy as np
+from matplotlib import pyplot as plt
+plt.rcParams["figure.figsize"] = [7.50,3.50]
+plt.rcParams["figure.autolayout"] = True
+x = np.linspace(-5,5,100)
+y = x**3
+plt.text(0,100,'$y=x^3$',fontsize=22,bbox=dict(facecolor='red',alpha= 0.5))
+plt.plot(x,y,c = 'g')
+plt.axis('off')
+plt.show()
