@@ -1,0 +1,14 @@
+from matplotlib import pyplot as plt
+plt.style.available
+plt.style.use('seaborn-white')
+agex = [25,26,27,29,33,32,35,28,35,39]
+devop = [3525,3326,3537,3129,3633,3033,3115,3628,3432,3009]
+javadop = [5525,5326,5537,5129,5633,5033,5115,5628,5432,5009]
+age_new = sorted(agex)
+dev_new = sorted(devop)
+java_new = sorted(javadop)
+plt.plot(age_new,dev_new,label = "All Dev")
+plt.plot(age_new,java_new,label = "All Java")
+plt.xlabel("Ages")
+plt.ylabel("Median Salary")
+plt.legend()
