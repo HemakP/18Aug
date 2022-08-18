@@ -1,0 +1,7 @@
+import numpy as np
+import pandas as pd
+from numpy import random
+path = 'C:\\Users\\hemakpatel\\Documents\\Python_training'
+filename = 'GaussianDist'
+x = np.random.normal(loc=0,scale=1,size=1000)
+(pd.DataFrame(x)).to_csv(path+'\\'+filename+'.csv',index=False)
