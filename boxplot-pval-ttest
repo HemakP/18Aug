@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+import numpy as np
+np.random.seed(10)
+data = np.random.normal(100,20,200)
+fig = plt.figure(figsize = (10,7))
+plt.boxplot(data)
+plt.show()
+
+P VALUE
+
+from scipy.stats import norm
+p = .95
+val = norm.ppf(p)
+print(val)
+
+
+T-TEST
+
+from numpy.random import randn
+from numpy.random import seed
+from scipy.stats import ttest_rel
+
+data1 = 5*randn(100)+50
+data2 = 5*randn(100)+50
+stat,p = ttest_rel(data1,data2)
+alpha = 0.5
+if p>alpha:
+    print("Fail to reject H0")
+else:
+    print("Reject H0")
